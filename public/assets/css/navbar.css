@@ -1,0 +1,157 @@
+/* ============================================================
+   navbar.css — Shared Header & Navbar Styles
+   Dùng chung cho TẤT CẢ các trang: index, boost, v.v.
+   ============================================================ */
+
+/* --- Header Bar --- */
+.main-header {
+    background: #141414;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+
+/* --- Brand Logo --- */
+.brand-title {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.2s ease;
+}
+
+.brand-title:hover {
+    opacity: 0.85;
+    color: #ffffff;
+}
+
+.brand-title .brand-icon {
+    font-size: 1.4rem;
+    color: #fe2c55;
+}
+
+/* --- Nav List --- */
+.main-nav {
+    display: flex;
+    align-items: center;
+    height: 64px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* --- Nav Item & Dropdown Trigger --- */
+.nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-link {
+    color: #cccccc;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 14px;
+    height: 100%;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-item:hover > .nav-link {
+    color: #fe2c55;
+}
+
+.nav-arrow {
+    font-size: 0.7rem;
+    transition: transform 0.25s ease;
+}
+
+.nav-item:hover > .nav-link .nav-arrow {
+    transform: rotate(180deg);
+}
+
+/* --- Dropdown Menu --- */
+.nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background: #ffffff;
+    border-radius: 10px;
+    list-style: none;
+    padding: 8px 0;
+    margin: 0;
+    min-width: 210px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+.nav-item:hover > .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    color: #111111;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.15s, color 0.15s;
+}
+
+.nav-dropdown li a:hover {
+    background: #f5f5f5;
+    color: #fe2c55;
+}
+
+.nav-dropdown li a i {
+    width: 16px;
+    text-align: center;
+    color: #666;
+}
+
+.nav-dropdown li a:hover i {
+    color: #fe2c55;
+}
+
+/* Active nav link */
+.nav-active {
+    color: #fe2c55 !important;
+}

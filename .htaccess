@@ -1,0 +1,17 @@
+# Block .env từ web
+<Files ".env">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Block .env.example từ web
+<Files ".env.example">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Block src/ config/ templates/ vendor/ từ web
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(src|config|templates|vendor)/ - [F,L]
+</IfModule>

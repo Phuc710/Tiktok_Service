@@ -1,0 +1,11 @@
+.env
+vendor/
+.vscode/
+*.log
+storage/*.log
+storage/cache/*
+storage/sessions/*
+storage/views/*
+node_modules/
+.DS_Store
+Thumbs.db

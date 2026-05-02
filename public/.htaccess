@@ -1,0 +1,14 @@
+# ============================================================
+# KaiTiktok — Apache Rewrite Rules
+# Mọi request đều qua public/index.php (Front Controller)
+# ============================================================
+
+Options -MultiViews
+RewriteEngine On
+
+# Bỏ qua file/thư mục thật (assets, v.v.)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Route tất cả qua index.php
+RewriteRule ^ index.php [QSA,L]
